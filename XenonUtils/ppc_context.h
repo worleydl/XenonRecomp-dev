@@ -105,7 +105,8 @@
 #define PPC_CALL_FUNC(x) x(ctx, base)
 #endif
 
-#define PPC_MEMORY_SIZE 0x100000000ull
+//#define PPC_MEMORY_SIZE 0x100000000ull
+#define PPC_MEMORY_SIZE 0xC0000000ull // DLW: Hacky UWP optimization, limited memory on xbox uwp and faux virtualmemory, set to 3GB instead of 4GB
 
 #define PPC_LOOKUP_FUNC(x, y) *(PPCFunc**)(x + PPC_IMAGE_BASE + PPC_IMAGE_SIZE + (uint64_t(uint32_t(y) - PPC_CODE_BASE) * 2))
 
